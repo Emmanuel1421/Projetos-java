@@ -16,30 +16,41 @@ public class PublicationControl extends Publication {
 
 
 
-        List<String> Publication = new ArrayList<>();
+        List<String> publication = new ArrayList<>();
 
-        System.out.println("Escreva o seu comentário: ");
-        setDescription(scn.nextLine());
-        publication.add("Comentário: "+setDescription());
-        //como eu faço para o comentário ser opcional?
-        //tem gente que não escreve, apenas avalia
+        System.out.println("Deseja escrever um comentário? ");
+        String resposta = scn.nextLine();//caso o usuario responda sim, ele poderá deixar um comentario sobre a musica
+        if (resposta.equalsIgnoreCase("sim")) {
+
+            System.out.println("\n---------------"+"Escreva o seu comentário: ");
+            setDescription(scn.nextLine());
+            publication.add("Comentário: " + getDescription()+("\n---------------"));//mostra o comentário na hora da saída dos dados.
+        }
 
         System.out.println("Deixe sua avaliação");
         setRating(scn.nextInt());
+        publication.add("Avaliação: "+getRating()+("\n---------------"));
+        //#toDo -> lembrar de adicionar um limite e um minimo de avaliação
+
+        scn.nextLine();//consome a quebra de linha deixada pelo nextInt
 
         System.out.println("Deseja deixar uma curtida?");
-        String resposta = scn.nextLine();
+        resposta = scn.nextLine();
 
-        if (resposta.equalsIgnoreCase("SIM")){
-        setLike(true);//caso o usuario digite sim,o comentário é curtido
-
-
+        if (resposta.equalsIgnoreCase("SIM")){//condicional para verificar se o usuario quer deixar uma curtida
+        setLike(true);
+            System.out.println("Like");;
+        }
         System.out.println("Comentário adicionado!");
+
         for (String publications: publication){
+            System.out.println(publications);
 
-        }
+        }//cria uma variavel temporaria que percorre os dados de publication e imprime
 
-        }
+//        public void EditPublication() {
+//
+//        }
 
     }
 
