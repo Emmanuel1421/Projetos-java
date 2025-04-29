@@ -1,5 +1,7 @@
 package model;
 
+import java.util.Scanner;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Publication {
@@ -21,6 +23,9 @@ public class Publication {
 
     public Publication(){
 
+    }
+    public List<String> getPublication(){
+        return publication;
     }
 
     public void setPublicationID(int publicationID){
