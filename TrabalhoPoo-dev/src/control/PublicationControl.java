@@ -39,7 +39,7 @@ public class PublicationControl extends Publication {
 
         if (resposta.equalsIgnoreCase("SIM")){//condicional para verificar se o usuario quer deixar uma curtida
         setLike(true);
-            System.out.println("Like");;
+            System.out.println("Like");
         }
         System.out.println("Comentário adicionado!");
 
